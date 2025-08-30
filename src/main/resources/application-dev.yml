@@ -1,0 +1,12 @@
+spring:
+  application:
+    security:
+      jwt:
+        secret-key: ${APPLICATION_SECURITY_JWT_SECRETKEY:SECRET_JWT_DEV}
+        expiration: ${APPLICATION_SECURITY_JWT_EXPIRATION:86400000}
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cawe_dev_backend
+    username: cawe_dev_backend_user
+    password: cawe_dev_backend_password
+  jpa:
+    show-sql: true

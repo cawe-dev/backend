@@ -1,0 +1,12 @@
+spring:
+  application:
+    security:
+      jwt:
+        secret-key: ${APPLICATION_SECURITY_JWT_SECRETKEY}
+        expiration: ${APPLICATION_SECURITY_JWT_EXPIRATION:3600000}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    show-sql: false

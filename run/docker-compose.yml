@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_cawe_dev_backend
+    volumes:
+      - cawe_dev_postgres_data:/var/lib/postgresql/data
+    networks:
+      - cawe_dev_backend_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  cawe_dev_backend_app:
+    container_name: cawe_dev_backend_app
+    networks:
+      - cawe_dev_backend_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  cawe_dev_postgres_data:
+
+networks:
+  cawe_dev_backend_network:

@@ -1,0 +1,21 @@
+app:
+  name: cawe_dev_backend
+  url: ${APPLICATION_URL:http://127.0.0.1:8080}
+spring:
+  profiles:
+    active: ${PROFILE:dev}
+  application:
+    name: cawe
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+      ddl-auto: none #Flyway
+  springdoc:
+    swagger-ui:
+      path: /swagger
+      use-root-path: true
+    redoc:
+      path: /redoc.html
+      enabled: true
