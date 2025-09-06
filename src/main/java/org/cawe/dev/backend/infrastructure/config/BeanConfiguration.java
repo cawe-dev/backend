@@ -1,0 +1,66 @@
+package org.cawe.dev.backend.infrastructure.config;
+
+import org.cawe.dev.backend.application.mapper.ApplicationUserMapper;
+import org.cawe.dev.backend.application.port.driven.*;
+import org.cawe.dev.backend.application.port.driver.*;
+import org.cawe.dev.backend.application.usecase.*;
+import org.cawe.dev.backend.infrastructure.adapter.persistence.UserAdapter;
+import org.cawe.dev.backend.infrastructure.adapter.persistence.mapper.UserPersistenceMapper;
+import org.cawe.dev.backend.infrastructure.adapter.persistence.repository.UserRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@Configuration
+public class BeanConfiguration {
+
+    @Bean
+    public UserAdapter userAdapter(final UserRepository userRepository, final UserPersistenceMapper userPersistenceMapper) {
+        return new UserAdapter(userRepository, userPersistenceMapper);
+    }
+
+    @Bean
+    public CreateUserUseCase createUserUseCase(final SaveUser saveUser, final CheckUserByEmail checkUserByEmail) {
+        return new CreateUserUseCaseImpl(saveUser, checkUserByEmail);
+    }
+
+    @Bean
+    public FindUserUseCase findUserUseCase(final FindUserById findUserById) {
+        return new FindUserUseCaseImpl(findUserById);
+    }
+
+    @Bean
+    public FindUserByEmail findUserByEmail(UserAdapter userAdapter) {
+        return userAdapter::findByEmail;
+    }
+
+    @Bean
+    public UpdateUserUseCase updateUserUseCase(final UpdateUser updateUser, final FindUserById findUserById) {
+        return new UpdateUserUseCaseImpl(updateUser, findUserById);
+    }
+
+    @Bean
+    public DeleteUserUseCase deleteUserUseCase(final DeleteUser deleteUser, final CheckUserById checkUserById) {
+        return new DeleteUserUseCaseImpl(deleteUser, checkUserById);
+    }
+
+    @Bean
+    public CheckUserByEmail checkUserByEmail(UserAdapter userAdapter) {
+        return userAdapter::existsByEmail;
+    }
+
+    @Bean
+    public CheckUserById checkUserById(UserAdapter userAdapter) {
+        return userAdapter::existsById;
+    }
+
+    @Bean
+    public LoginUseCase loginUseCase(final FindUserByEmail findUserByEmail, final CreateUserUseCase createUserUseCase, final ApplicationUserMapper applicationUserMapper, final FetchUserIdentity fetchUserIdentity) {
+        return new LoginUseCaseImpl(findUserByEmail, createUserUseCase, applicationUserMapper, fetchUserIdentity);
+    }
+
+    @Bean
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
+    }
+}

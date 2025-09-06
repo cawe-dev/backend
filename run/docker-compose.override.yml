@@ -9,6 +9,20 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
 
+  localstack:
+    image: localstack/localstack:latest-amd64
+    container_name: localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,sqs
+      - DEBUG=1
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "cawe_dev_localstack_data:/var/lib/localstack"
+    networks:
+      - cawe_dev_backend_network
+
   cawe_dev_backend_app:
     build:
       context: ..
@@ -16,9 +30,14 @@ services:
     ports:
       - "9901:8080"
     environment:
-      PROFILE: dev
+      PROFILE: dev,cognito
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
-      APPLICATION_SECURITY_JWT_SECRETKEY: ${APPLICATION_SECURITY_JWT_SECRETKEY}
-      APPLICATION_SECURITY_JWT_EXPIRATION: ${APPLICATION_SECURITY_JWT_EXPIRATION}
+      AWS_COGNITO_REGION: ${AWS_COGNITO_REGION}
+      AWS_COGNITO_USER_POOL_ID: ${AWS_COGNITO_USER_POOL_ID}
+      AWS_COGNITO_APP_CLIENT_ID: ${AWS_COGNITO_APP_CLIENT_ID}
+      AWS_COGNITO_USER_INFO_URI: ${AWS_COGNITO_USER_INFO_URI}
+
+volumes:
+  cawe_dev_localstack_data:

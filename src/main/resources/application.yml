@@ -12,6 +12,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none #Flyway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.${aws.cognito.region}.amazonaws.com/${aws.cognito.userPoolId}
   springdoc:
     swagger-ui:
       path: /swagger
@@ -19,3 +24,10 @@ spring:
     redoc:
       path: /redoc.html
       enabled: true
+
+aws:
+  cognito:
+    region: ${AWS_COGNITO_REGION:us-east-2}
+    userPoolId: ${AWS_COGNITO_USER_POOL_ID}
+    appClientId: ${AWS_COGNITO_APP_CLIENT_ID}
+    user-info-uri: ${AWS_COGNITO_USER_INFO_URI}
