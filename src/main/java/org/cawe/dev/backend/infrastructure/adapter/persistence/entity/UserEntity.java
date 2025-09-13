@@ -10,18 +10,12 @@ import org.cawe.dev.backend.domain.enumeration.RoleEnum;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import java.io.Serial;
-import java.io.Serializable;
-
 @Setter
 @Getter
 @Entity
 @Table(name = "users")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class UserEntity extends BaseEntity implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 1L;
+public class UserEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

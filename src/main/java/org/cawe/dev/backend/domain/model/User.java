@@ -1,15 +1,9 @@
 package org.cawe.dev.backend.domain.model;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
 import org.cawe.dev.backend.domain.enumeration.RoleEnum;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public class User {
+public class User extends BaseModel {
     private Integer id;
 
     @NotNull(message = "The name must be informed")
