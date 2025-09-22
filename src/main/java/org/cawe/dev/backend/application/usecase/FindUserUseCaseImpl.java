@@ -1,8 +1,8 @@
 package org.cawe.dev.backend.application.usecase;
 
 import lombok.RequiredArgsConstructor;
-import org.cawe.dev.backend.application.port.driven.FindUserById;
-import org.cawe.dev.backend.application.port.driver.FindUserUseCase;
+import org.cawe.dev.backend.application.port.driven.user.FindUserById;
+import org.cawe.dev.backend.application.port.driver.user.FindUserUseCase;
 import org.cawe.dev.backend.domain.exception.EntityNotFoundException;
 import org.cawe.dev.backend.domain.model.User;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.entity.UserEntity;

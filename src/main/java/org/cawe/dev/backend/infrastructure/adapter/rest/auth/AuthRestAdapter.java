@@ -2,7 +2,7 @@ package org.cawe.dev.backend.infrastructure.adapter.rest.auth;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.cawe.dev.backend.application.port.driver.LoginUseCase;
+import org.cawe.dev.backend.application.port.driver.user.LoginUseCase;
 import org.cawe.dev.backend.domain.model.User;
 import org.cawe.dev.backend.infrastructure.adapter.rest.auth.dto.LoginUserResponse;
 import org.cawe.dev.backend.infrastructure.adapter.rest.auth.mapper.AuthRestMapper;

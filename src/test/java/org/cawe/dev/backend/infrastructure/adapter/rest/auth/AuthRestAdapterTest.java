@@ -3,7 +3,7 @@ package org.cawe.dev.backend.infrastructure.adapter.rest.auth;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.cawe.dev.backend.AbstractIntegrationTest;
 import org.cawe.dev.backend.TestFixtureUtil;
-import org.cawe.dev.backend.application.port.driver.LoginUseCase;
+import org.cawe.dev.backend.application.port.driver.user.LoginUseCase;
 import org.cawe.dev.backend.domain.exception.UserIdentityNotFoundException;
 import org.cawe.dev.backend.domain.model.User;
 import org.cawe.dev.backend.infrastructure.adapter.cognito.CognitoIdentityAdapter;

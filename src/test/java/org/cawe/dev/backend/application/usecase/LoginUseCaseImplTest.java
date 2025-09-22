@@ -1,10 +1,10 @@
 package org.cawe.dev.backend.application.usecase;
 
 import org.cawe.dev.backend.application.mapper.ApplicationUserMapper;
-import org.cawe.dev.backend.application.port.driven.FetchUserIdentity;
-import org.cawe.dev.backend.application.port.driven.FindUserByEmail;
-import org.cawe.dev.backend.application.port.driver.CreateUserUseCase;
+import org.cawe.dev.backend.application.port.driven.user.FetchUserIdentity;
+import org.cawe.dev.backend.application.port.driven.user.FindUserByEmail;
 import org.cawe.dev.backend.application.port.driver.input.LoginUserInput;
+import org.cawe.dev.backend.application.port.driver.user.CreateUserUseCase;
 import org.cawe.dev.backend.domain.exception.UserIdentityNotFoundException;
 import org.cawe.dev.backend.domain.model.User;
 import org.junit.jupiter.api.BeforeEach;

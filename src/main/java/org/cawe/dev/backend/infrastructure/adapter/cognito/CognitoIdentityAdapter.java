@@ -2,7 +2,7 @@ package org.cawe.dev.backend.infrastructure.adapter.cognito;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.cawe.dev.backend.application.port.driven.FetchUserIdentity;
+import org.cawe.dev.backend.application.port.driven.user.FetchUserIdentity;
 import org.cawe.dev.backend.application.port.driver.input.LoginUserInput;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;

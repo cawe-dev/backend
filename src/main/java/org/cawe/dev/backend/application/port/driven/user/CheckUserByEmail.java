@@ -1,4 +1,4 @@
-package org.cawe.dev.backend.application.port.driven;
+package org.cawe.dev.backend.application.port.driven.user;
 
 public interface CheckUserByEmail {
 

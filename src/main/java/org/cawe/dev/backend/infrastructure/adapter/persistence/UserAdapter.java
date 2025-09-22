@@ -2,7 +2,7 @@ package org.cawe.dev.backend.infrastructure.adapter.persistence;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.cawe.dev.backend.application.port.driven.*;
+import org.cawe.dev.backend.application.port.driven.user.*;
 import org.cawe.dev.backend.domain.model.User;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.entity.UserEntity;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.mapper.UserPersistenceMapper;

@@ -1,7 +1,7 @@
 package org.cawe.dev.backend.application.usecase;
 
-import org.cawe.dev.backend.application.port.driven.FindUserById;
-import org.cawe.dev.backend.application.port.driven.UpdateUser;
+import org.cawe.dev.backend.application.port.driven.user.FindUserById;
+import org.cawe.dev.backend.application.port.driven.user.UpdateUser;
 import org.cawe.dev.backend.domain.exception.EntityNotFoundException;
 import org.cawe.dev.backend.domain.model.User;
 import org.junit.jupiter.api.BeforeEach;

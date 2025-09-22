@@ -1,8 +1,8 @@
 package org.cawe.dev.backend.infrastructure.config;
 
 import org.cawe.dev.backend.application.mapper.ApplicationUserMapper;
-import org.cawe.dev.backend.application.port.driven.*;
-import org.cawe.dev.backend.application.port.driver.*;
+import org.cawe.dev.backend.application.port.driven.user.*;
+import org.cawe.dev.backend.application.port.driver.user.*;
 import org.cawe.dev.backend.application.usecase.*;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.UserAdapter;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.mapper.UserPersistenceMapper;

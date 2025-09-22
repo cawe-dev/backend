@@ -1,9 +1,9 @@
 package org.cawe.dev.backend.application.usecase;
 
 import lombok.RequiredArgsConstructor;
-import org.cawe.dev.backend.application.port.driven.CheckUserById;
-import org.cawe.dev.backend.application.port.driven.DeleteUser;
-import org.cawe.dev.backend.application.port.driver.DeleteUserUseCase;
+import org.cawe.dev.backend.application.port.driven.user.CheckUserById;
+import org.cawe.dev.backend.application.port.driven.user.DeleteUser;
+import org.cawe.dev.backend.application.port.driver.user.DeleteUserUseCase;
 import org.cawe.dev.backend.domain.exception.EntityNotFoundException;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.entity.UserEntity;
 import org.springframework.transaction.annotation.Transactional;

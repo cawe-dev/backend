@@ -1,6 +1,6 @@
 package org.cawe.dev.backend.application.usecase;
 
-import org.cawe.dev.backend.application.port.driven.FindUserById;
+import org.cawe.dev.backend.application.port.driven.user.FindUserById;
 import org.cawe.dev.backend.domain.exception.EntityNotFoundException;
 import org.cawe.dev.backend.domain.model.User;
 import org.junit.jupiter.api.BeforeEach;
@@ -51,6 +51,7 @@ class FindUserUseCaseImplTest {
         when(findUserById.findById(userToFind.getId())).thenReturn(Optional.ofNullable(expectedUser));
 
         User userFound = findUserUseCase.execute(userToFind.getId());
+
 
         assertNotNull(userFound.getId());
         assertEquals(userToFind.getId(), userFound.getId());

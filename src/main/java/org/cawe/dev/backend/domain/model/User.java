@@ -1,8 +1,18 @@
 package org.cawe.dev.backend.domain.model;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.cawe.dev.backend.domain.enumeration.RoleEnum;
 
+@Data
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class User extends BaseModel {
     private Integer id;
 

@@ -1,7 +1,7 @@
 package org.cawe.dev.backend.application.usecase;
 
-import org.cawe.dev.backend.application.port.driven.CheckUserByEmail;
-import org.cawe.dev.backend.application.port.driven.SaveUser;
+import org.cawe.dev.backend.application.port.driven.user.CheckUserByEmail;
+import org.cawe.dev.backend.application.port.driven.user.SaveUser;
 import org.cawe.dev.backend.domain.exception.EmailAlreadyUsedException;
 import org.cawe.dev.backend.domain.model.User;
 import org.junit.jupiter.api.BeforeEach;

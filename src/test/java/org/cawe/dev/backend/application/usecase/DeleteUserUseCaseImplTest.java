@@ -1,7 +1,7 @@
 package org.cawe.dev.backend.application.usecase;
 
-import org.cawe.dev.backend.application.port.driven.CheckUserById;
-import org.cawe.dev.backend.application.port.driven.DeleteUser;
+import org.cawe.dev.backend.application.port.driven.user.CheckUserById;
+import org.cawe.dev.backend.application.port.driven.user.DeleteUser;
 import org.cawe.dev.backend.domain.exception.EntityNotFoundException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

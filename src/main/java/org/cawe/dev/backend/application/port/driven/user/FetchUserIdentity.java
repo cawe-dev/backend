@@ -1,4 +1,4 @@
-package org.cawe.dev.backend.application.port.driven;
+package org.cawe.dev.backend.application.port.driven.user;
 
 import org.cawe.dev.backend.application.port.driver.input.LoginUserInput;
 import org.springframework.security.oauth2.jwt.Jwt;

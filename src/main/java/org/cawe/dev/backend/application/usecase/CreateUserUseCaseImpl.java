@@ -1,9 +1,9 @@
 package org.cawe.dev.backend.application.usecase;
 
 import lombok.RequiredArgsConstructor;
-import org.cawe.dev.backend.application.port.driven.CheckUserByEmail;
-import org.cawe.dev.backend.application.port.driven.SaveUser;
-import org.cawe.dev.backend.application.port.driver.CreateUserUseCase;
+import org.cawe.dev.backend.application.port.driven.user.CheckUserByEmail;
+import org.cawe.dev.backend.application.port.driven.user.SaveUser;
+import org.cawe.dev.backend.application.port.driver.user.CreateUserUseCase;
 import org.cawe.dev.backend.domain.exception.EmailAlreadyUsedException;
 import org.cawe.dev.backend.domain.model.User;
 import org.springframework.transaction.annotation.Transactional;
