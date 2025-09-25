@@ -3,10 +3,12 @@ package org.cawe.dev.backend;
 
 import jakarta.transaction.Transactional;
 import org.cawe.dev.backend.domain.enumeration.RoleEnum;
+import org.cawe.dev.backend.domain.model.Tag;
 import org.cawe.dev.backend.domain.model.User;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.entity.UserEntity;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.mapper.UserPersistenceMapper;
 import org.cawe.dev.backend.infrastructure.adapter.persistence.repository.UserRepository;
+import org.cawe.dev.backend.infrastructure.adapter.rest.tag.dto.RegisterTagRequest;
 import org.cawe.dev.backend.infrastructure.adapter.rest.user.dto.RegisterUserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -51,6 +53,20 @@ public class TestFixtureUtil {
 
     public RegisterUserRequest createRegisterUserRequest(User user) {
         return new RegisterUserRequest(user.getName(), user.getEmail());
+    }
+
+    public Tag createTag() {
+        String random = this.getRandom();
+
+        return Tag.builder()
+                .id(Integer.valueOf(random))
+                .name(String.format("TagName%s", random))
+                .build();
+    }
+
+
+    public RegisterTagRequest createRegisterTagRequest(Tag tag) {
+        return new RegisterTagRequest(tag.getName());
     }
 
     private String getRandom() {

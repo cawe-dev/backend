@@ -1,4 +1,4 @@
-package org.cawe.dev.backend.application.usecase;
+package org.cawe.dev.backend.application.usecase.user;
 
 import lombok.RequiredArgsConstructor;
 import org.cawe.dev.backend.application.port.driven.user.CheckUserById;

@@ -1,4 +1,4 @@
-package org.cawe.dev.backend.application.usecase;
+package org.cawe.dev.backend.application.usecase.user;
 
 import org.cawe.dev.backend.application.mapper.ApplicationUserMapper;
 import org.cawe.dev.backend.application.port.driven.user.FetchUserIdentity;

@@ -18,6 +18,14 @@ public class UserAdapter implements SaveUser, FindUserById, FindUserByEmail, Che
     private final UserPersistenceMapper userPersistenceMapper;
 
     @Override
+    @Transactional
+    public User save(User user) {
+        UserEntity userEntity = userPersistenceMapper.toEntity(user);
+        UserEntity savedEntity = userRepository.save(userEntity);
+        return userPersistenceMapper.toDomain(savedEntity);
+    }
+
+    @Override
     public Optional<User> findById(Integer id) {
         return this.userRepository.findById(id)
                 .map(this.userPersistenceMapper::toDomain);
@@ -27,14 +35,6 @@ public class UserAdapter implements SaveUser, FindUserById, FindUserByEmail, Che
     public Optional<User> findByEmail(String email) {
         return this.userRepository.findByEmail(email)
                 .map(this.userPersistenceMapper::toDomain);
-    }
-
-    @Override
-    @Transactional
-    public User save(User user) {
-        UserEntity userEntity = userPersistenceMapper.toEntity(user);
-        UserEntity savedEntity = userRepository.save(userEntity);
-        return userPersistenceMapper.toDomain(savedEntity);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package org.cawe.dev.backend.application.usecase;
+package org.cawe.dev.backend.application.usecase.user;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
